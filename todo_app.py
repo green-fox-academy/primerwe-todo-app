@@ -20,14 +20,14 @@ class Controller():
         elif self.list_argv[0] == '-c':
             try:
                 if len(self.list_argv) <= 1:
-                    view.print_unable_to_check()
+                    print('Unable to check: no index provided')
                 elif int(self.list_argv[1]) > len(model.txt):
-                    view.print_unable_to_check()
+                    print('Unable to check: index is out of bound')
                 else:
                     model.complete_todo(int(self.list_argv[1]))
                     view.print_file()
             except:
-                view.print_unable_to_check()
+                print('Unable to check: index is not a number')
         elif self.list_argv[0] == '-a':
             if len(self.list_argv) <= 1:
                 print('Unable to add: no task provided')
@@ -37,16 +37,16 @@ class Controller():
         elif self.list_argv[0] == '-r':
             try:
                 if len(self.list_argv) <= 1:
-                    view.print_remove_error()
+                    print('Unable to remove: no index provided')
                 elif int(self.list_argv[1]) > len(model.txt):
-                    view.print_remove_error()
+                    print('Unable to remove: index is out of bound')
                 else:
                     model.remove_todo(int(self.list_argv[1]))
                     view.print_file()
             except:
-                view.print_remove_error()
+                print('Unable to remove: index is not a number')
         else:
-            print('Unsupported argument')
+            print('\nUnsupported argument\n')
             view.print_commands()
 
 
@@ -89,7 +89,7 @@ class View():
         ]
         
     def print_commands(self):
-        print('Command Line Todo application\n' + '=============================\n' + 'Command line arguments:\n\n')
+        print('Command Line Todo application\n' + '=============================\n' + 'Command line arguments:\n')
         for i in self.commands:
             print(i['argument'] + ' ' + i['description'])
    
@@ -99,12 +99,6 @@ class View():
         else:
             for i in range(len(model.txt)):
                 print(i+1, model.txt[i][:-1])
-    
-    def print_remove_error(self):
-        print("Unable to remove")
-
-    def print_unable_to_check(self):
-        print("Unable to check")
     
 model = Model()
 view = View()
