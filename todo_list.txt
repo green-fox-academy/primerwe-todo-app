@@ -1,0 +1,5 @@
+- [ ] Buy milk
+- [ ] Do homework
+- [X] Take a nap
+- [X] Feed the monkey
+- [ ] Have fun
