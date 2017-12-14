@@ -25,6 +25,7 @@ class Controller():
                     view.print_unable_to_check()
                 else:
                     model.complete_todo(int(self.list_argv[1]))
+                    view.print_file()
             except:
                 view.print_unable_to_check()
         elif self.list_argv[0] == '-a':
@@ -41,6 +42,7 @@ class Controller():
                     view.print_remove_error()
                 else:
                     model.remove_todo(int(self.list_argv[1]))
+                    view.print_file()
             except:
                 view.print_remove_error()
         else:
@@ -72,7 +74,7 @@ class Model():
         self.open_write()
 
     def complete_todo(self, item):
-        self.txt[item] = '[X]' + self.txt[item][5:-1] + '\n'
+        self.txt[item] = self.txt[item].replace('[ ]', '[X]', 1)
         self.open_write()
      
     
