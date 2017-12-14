@@ -6,6 +6,10 @@ class Controller():
         self.arg_reader()
         self.controller()
     
+    def arg_reader(self):
+        
+    
+    def controller(self)
 
 class Model()
     def __init__(self):
@@ -33,23 +37,25 @@ class Model()
     def complete_todo(self, item):
         self.txt[item].replace('[ ]', '[X]', 1)
         self.open_write()
-        
+     
+    
         
 class View():
     
     def __init__(self):
         self.commands = [
-            {'arg': '-l', 'desc' : 'Lists all the tasks'},
-            {'arg': '-a', 'desc' : 'Adds a new task'},
-            {'arg': '-r', 'desc' : 'Removes a task'},
-            {'arg': '-c', 'desc' : 'Completes a task'}
+            {'argument': '-l', 'description' : 'Lists all the tasks'},
+            {'argument': '-a', 'description' : 'Adds a new task'},
+            {'argument': '-r', 'description' : 'Removes a task'},
+            {'argument': '-c', 'description' : 'Completes a task'}
         ]
         
     def print_commands(self):
         print('Command Line Todo application\n' + '=============================\n' + 'Command line arguments:\n\n')
         for i in self.commands:
-            print(i['arg'] + ' ' + i['desc'])
-            
+            print(i['argument'] + ' ' + i['description'])
+    
+    
     
 model = Model()
 view = View()
