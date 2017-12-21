@@ -92,7 +92,7 @@ class View():
         print('Command Line Todo application\n' + '=============================\n' + 'Command line arguments:\n')
         for i in self.commands:
             print(i['argument'] + ' ' + i['description'])
-   
+    
     def print_file(self):
         if len(model.txt) == 0:
             print("No todos for today! :)")
